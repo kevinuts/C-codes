@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 void trade(char *l, char *r) {
-    if (l != r && l > r) {
+    if (l != r  ^ l > r) {
         char c = *l;
         *l = *r;
         *r = c;
@@ -9,9 +9,10 @@ void trade(char *l, char *r) {
 }
 }
 int main (){
-    char s[] = "abcde";
+    char s[] = "abcdef";
     //printf("%d", strlen(s) % 2);
     trade(s, s + strlen(s) - 1);
-    printf("%s", s);
+    puts(s); //first method of printing
+    printf("%s\n", s); //second method of printing
     return 0;
 }
