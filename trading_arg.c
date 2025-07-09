@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 void trade(char *l, char *r) {
-    if (l != r && l > r) {
+    if (l != r ^ l > r) {
         char c = *l;
         *l = *r;
         *r = c;
@@ -16,6 +16,7 @@ int main (int argc, char *argv[]){
 	}
     //printf("%d", strlen(s) % 2);
     trade(argv[1], argv[1] + strlen(argv[1]) - 1);
-    printf("%s", argv[1]);
+    printf("%s\n", argv[1]);//first method of printing
+    puts(argv[1]);//second method of printing
     return 0;
 }
